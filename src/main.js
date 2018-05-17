@@ -5,8 +5,11 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+// import VueMaterial from 'vue-material'
+// import 'vue-material/dist/vue-material.min.css'
 
 Vue.use(Vuetify)
+// Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
 

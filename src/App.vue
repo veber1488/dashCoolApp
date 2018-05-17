@@ -103,13 +103,13 @@
       <v-container fluid fill-height>
         <v-layout>
           <v-tooltip right>
-       
+        
           </v-tooltip>
         </v-layout>
       </v-container>
     </v-content>
 
-<v-btn
+    <!-- <v-btn
       fab
       bottom
       right
@@ -120,7 +120,59 @@
       class="bottom-btn">
       <v-icon>add</v-icon>
       <v-icon>edit</v-icon>
-    </v-btn>
+    </v-btn>  -->
+    
+    <v-speed-dial
+        v-model="fab"
+        :top="top"
+        :bottom="bottom"
+        :right="right"
+        :left="left"
+        fixed
+        :direction="direction"
+        :open-on-hover="hover"
+        :transition="transition"
+        class="bottom-btn"
+        outline
+      >
+        <v-btn
+          slot="activator"
+          v-model="fab"
+          color="blue darken-2"
+          dark
+          fab
+          @click="sheet = !sheet"
+          outline
+        >
+          <v-icon>close</v-icon>
+          <v-icon>add</v-icon>
+        </v-btn>
+        <!-- <v-btn
+          fab
+          dark
+          small
+          color="green"
+        >
+          <v-icon>edit</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          dark
+          small
+          color="indigo"
+        >
+          <v-icon>add</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          dark
+          small
+          color="red"
+        >
+          <v-icon>delete</v-icon>
+        </v-btn> -->
+      </v-speed-dial>
+
 
 
 
@@ -286,7 +338,17 @@ export default {
       { img: 'hangouts.png', title: 'Item15' },
       { img: 'messenger.png', title: 'Item16' },
       { img: 'google.png', title: 'Item17' }
-    ]
+    ],
+    direction: 'top',
+    fab: true,
+    fling: false,
+    hover: false,
+    tabs: null,
+    top: false,
+    right: true,
+    bottom: true,
+    left: false,
+    transition: 'slide-y-reverse-transition'
     }),
   name: 'App'
 }
